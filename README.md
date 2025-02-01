@@ -1,6 +1,6 @@
-# simple to-do list (cli)
+# simple todo list (cli)
 
-a command-line to-do list application written in python.  
+a command-line todo list application written in python.  
 easily add, view, and mark tasks as completed, with persistent storage.
 
 ## features
