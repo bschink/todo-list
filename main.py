@@ -1,8 +1,26 @@
+import os
+
+TODO_FILE = "tasks.txt"
+
+def load_tasks():
+    """Loads tasks from a file (if it exists) and returns a list."""
+    if not os.path.exists(TODO_FILE):
+        return []
+    with open(TODO_FILE, "r") as file:
+        return [line.strip() for line in file.readlines()]
+    
+def save_tasks(tasks):
+    """Saves tasks to a file."""
+    with open(TODO_FILE, "w") as file:
+        for task in tasks:
+            file.write(task + "\n")
+
 def add_task(tasks):
     """add a task to the todo list"""
     task = input("Enter a task: ").strip()
     if task:
         tasks.append(task)
+        save_tasks(tasks)
         print("task added!")
 
 def view_tasks(tasks):
@@ -24,6 +42,7 @@ def complete_task(tasks):
             if 1 <= task_number <= len(tasks):
                 task = tasks.pop(task_number - 1)
                 print(f"completed: {task}")
+                save_tasks(tasks)
             else:
                 print("invalid task number")
         else:
@@ -33,7 +52,7 @@ def complete_task(tasks):
 
 def main():
     """main loop for the todo list cli"""
-    tasks = []
+    tasks = load_tasks()
 
     while True:
         print("\nwhat would you like to do?")
