@@ -1,33 +1,39 @@
-# TODO add the real functionality to the add_task function
-def add_task():
-    task = input("Enter a task: ")
+def add_task(tasks):
+    """add a task to the todo list"""
+    task = input("Enter a task: ").strip()
+    if task:
+        tasks.append(task)
+        print("task added!")
 
-# TODO add the real functionality to the view_tasks function
-def view_tasks():
-    print("Tasks:")
-    print("1. Task 1")
-    print("2. Task 2")
-    print("3. Task 3")
+def view_tasks(tasks):
+    """view the tasks in the todo list"""
+    if tasks:
+        print("tasks:")
+        for i, task in enumerate(tasks, 1):
+            print(f"{i}. {task}")
+    else:
+        print("no tasks")
 
 def main():
+    """main loop for the todo list cli"""
+    tasks = []
+
     while True:
-        print("What would you like to do?")
-        print("1. Add a task")
-        print("2. View tasks")
-        print("3. Exit")
-        choice = input("Enter your choice: ")
+        print("\nwhat would you like to do?")
+        print("1. view tasks")
+        print("2. add a task")
+        print("3. exit")
+        choice = input("enter your choice: ").strip()
 
         if choice == "1":
-            add_task()
+            view_tasks(tasks)
         elif choice == "2":
-            view_tasks()
+            add_task(tasks)
         elif choice == "3":
-            print("Goodbye!")
+            print("goodbye!")
             break
         else:
-            print("Invalid choice. Please try again.")
-
-        print("")  # Print a blank line for spacing
+            print("invalid choice. please try again")
 
 if __name__ == "__main__":
     main()

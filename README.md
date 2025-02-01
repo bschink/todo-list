@@ -7,7 +7,7 @@ easily add, view, and mark tasks as completed, with persistent storage.
 - simple menu-based command-line interface
 
 ## future features
-- Add tasks
-- Mark tasks as completed
-- Save tasks to a file for persistence
-- View tasks in a numbered list
+- add tasks
+- mark tasks as completed
+- save tasks to a file for persistence
+- view tasks in a numbered list
