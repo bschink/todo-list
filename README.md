@@ -10,5 +10,7 @@ easily add, view, and mark tasks as completed, with persistent storage.
 - save tasks to a file for persistence
 - simple menu-based command-line interface
 
-## future features
-
+## possible future improvements
+- task due dates
+- task priorities
+- gui version (using tkinter)
