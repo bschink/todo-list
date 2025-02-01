@@ -14,6 +14,23 @@ def view_tasks(tasks):
     else:
         print("no tasks")
 
+def complete_task(tasks):
+    """mark a task as complete"""
+    if tasks:
+        view_tasks(tasks)
+        task_number = input("enter the number of the task to mark as complete: ").strip()
+        if task_number.isdigit():
+            task_number = int(task_number)
+            if 1 <= task_number <= len(tasks):
+                task = tasks.pop(task_number - 1)
+                print(f"completed: {task}")
+            else:
+                print("invalid task number")
+        else:
+            print("invalid input")
+    else:
+        print("no tasks to complete")
+
 def main():
     """main loop for the todo list cli"""
     tasks = []
@@ -22,7 +39,8 @@ def main():
         print("\nwhat would you like to do?")
         print("1. view tasks")
         print("2. add a task")
-        print("3. exit")
+        print("3. mark a task as complete")
+        print("4. exit")
         choice = input("enter your choice: ").strip()
 
         if choice == "1":
@@ -30,6 +48,8 @@ def main():
         elif choice == "2":
             add_task(tasks)
         elif choice == "3":
+            complete_task(tasks)
+        elif choice == "4":
             print("goodbye!")
             break
         else:
