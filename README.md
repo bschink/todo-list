@@ -4,6 +4,7 @@ a command-line todo list application written in python.
 easily add, view, and mark tasks as completed, with persistent storage.
 
 ## features
+
 - view tasks in a numbered list
 - add tasks
 - mark tasks as completed
@@ -11,6 +12,7 @@ easily add, view, and mark tasks as completed, with persistent storage.
 - simple menu-based command-line interface
 
 ## possible future improvements
+
 - task due dates
 - task priorities
 - gui version (using tkinter)
