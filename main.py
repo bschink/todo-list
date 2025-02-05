@@ -1,31 +1,9 @@
-import tasks
-import storage
-
-def main():
-    """main loop for the todo list cli"""
-    task_list = storage.load_tasks()
-
-    while True:
-        print("\nwhat would you like to do?")
-        print("1. view tasks")
-        print("2. add a task")
-        print("3. mark a task as complete")
-        print("4. exit")
-        choice = input("enter your choice: ").strip()
-
-        if choice == "1":
-            tasks.view_tasks(task_list)
-        elif choice == "2":
-            tasks.add_task(task_list)
-            storage.save_tasks(task_list)
-        elif choice == "3":
-            tasks.complete_task(task_list)
-            storage.save_tasks(task_list)
-        elif choice == "4":
-            print("goodbye!")
-            break
-        else:
-            print("invalid choice. please try again")
+import sys
+from gui import run_gui
+from cli import run_cli
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "--cli":
+        run_cli()
+    else:
+        run_gui()  # Default to GUI mode
