@@ -1,19 +1,18 @@
-# simple todo list (cli)
+# simple todo list
 
-a command-line todo list application written in python.  
+a todo list application written in python.  
 easily add, view, and mark tasks as completed, with persistent storage.
 
 ## features
 
-- simple menu-based command-line interface
-- view tasks in a numbered list
+- simple gui interface build with tkinter
+- view tasks in a list
 - add tasks
 - mark tasks as completed
-- save tasks to a file for persistence
+- tasks automatically saved to a file for persistence
 
 ## possible future improvements
 
+- changing persistence from txt to json
 - task due dates
 - task priorities
-- gui version (using tkinter)
-- changing persistence from txt to json
