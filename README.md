@@ -9,10 +9,9 @@ easily add, view, and mark tasks as completed, with persistent storage.
 - view tasks in a list
 - add tasks
 - mark tasks as completed
-- tasks automatically saved to a file for persistence
+- tasks automatically saved to a file in json format for persistence
 
 ## possible future improvements
 
-- changing persistence from txt to json
 - task due dates
 - task priorities
